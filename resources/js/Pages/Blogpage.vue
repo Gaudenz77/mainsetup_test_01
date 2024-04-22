@@ -61,7 +61,7 @@ const formatCreatedAt = (createdAt: any) => {
 
     <AppLayout>
       <template #header>
-        <h2 class="font-semibold text-xl leading-tight">
+        <h2 class="bricolage-grotesque-mainsetup-lead">
           Pinboard hey hey YALLZIES !!!
         </h2>
       </template>
