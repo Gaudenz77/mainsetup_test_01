@@ -99,10 +99,10 @@ const formatCreatedAt = (createdAt: any) => {
           </a>
         </div> -->
         <div class="flex flex-col sm:flex-row justify-center m-8 gap-8 text-black dark:text-white text-left">
-            <div class="bricolage-grotesque-mainsetup w-full sm:w-1/4 bg-red-500  ps-4 pe-8 pt-8 lg:relative top-8 rounded-tr-3xl rounded-bl-full">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae cum et rem officia earum eligendi ad saepe consequatur cupiditate, totam aut molestiae ipsam repellendus harum eum quos ducimus? Iusto, dolor.</div>
-            <div class="w-full sm:w-1/4 bg-orange-400 ps-4 pe-8 pt-8 lg:relative top-16 rounded-e-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quisquam incidunt reiciendis quis laborum, vero ratione, ea architecto ut sit repellendus iste enim nisi et aut error optio assumenda porro?</div>
-            <div class="w-full sm:w-1/4 bg-green-500  ps-4 pe-8 pt-8 lg:relative bottom-3 rounded-s-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
-            <div class="w-full sm:w-1/4 bg-yellow-500  ps-4 pe-8 pt-8 lg:relative top-8  rounded-tr-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
+            <div class="bricolage-grotesque-mainsetup w-full sm:w-1/4 bg-red-500  ps-4 pe-8 pt-8 lg:relative top-8 rounded-e-full text-center"><p class="text-[8rem] font-extrabold">Dada</p></div>
+            <div class="w-full sm:w-1/4 bg-orange-400 ps-4 pe-8 pt-8 lg:relative top-16 rounded-t-full text-center"><p class="text-[8rem] font-extrabold">A</p></div>
+            <div class="w-full sm:w-1/4 bg-green-500  ps-4 pe-8 pt-8 lg:relative bottom-3 rounded-e-full text-center"><p class="text-[8rem] font-extrabold">D</p></div>
+            <div class="w-full sm:w-1/4 bg-yellow-500  ps-4 pe-8 pt-8 lg:relative top-8  rounded-t-full text-center"><p class="text-[8rem] font-extrabold">a</p></div>
         </div>
 
         <div class="flex flex-col sm:flex-row justify-center mx-16 mt-32 gap-8 text-black dark:text-white text-left">
@@ -110,30 +110,28 @@ const formatCreatedAt = (createdAt: any) => {
           <Blogcard />
           <Blogcard />
           <Blogcard />
-   
         </div>
-        <!-- <div class="">
-          <div class="container">
-              <div class="ball"></div>
-          </div>  
-        </div> -->
+    <!-- <div class="">
+        <div class="container">
+            <div class="ball"></div>
+        </div>  
+    </div> -->
 
-        <div class="">
+    <!-- <div class="">
+        <ul  class="w-1/4 ms-12 border-8 rounded-xl">
+        <li class="border-8 rounded-lg">
+          <label> <input type="radio" name="source" />Google</label>
+        </li>
+        <li class="border-8 rounded-lg">
+          <label> <input type="radio" name="source" />Word of Mouth</label>
+        </li>
+        <li class="border-8 rounded-lg">
+          <label> <input type="radio" name="source" />Other</label>
+        </li>
+        </ul>
+    </div> -->
 
-<ul  class="w-1/4 ms-12 border-8 rounded-xl">
- <li class="border-8 rounded-lg">
-  <label> <input type="radio" name="source" />Google</label>
- </li>
- <li class="border-8 rounded-lg">
-  <label> <input type="radio" name="source" />Word of Mouth</label>
- </li>
- <li class="border-8 rounded-lg">
-  <label> <input type="radio" name="source" />Other</label>
- </li>
-</ul>
-        </div>
-
-         <!-- </div> -->
+    <!-- </div> -->
     </AppLayout>
 
   </div>

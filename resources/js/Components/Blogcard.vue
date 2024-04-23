@@ -1,16 +1,20 @@
 <template>
-    <a href="#" class="group relative block h-64 sm:h-80 lg:h-96 dark:text-gray-200 text-slate-800">
+    <a href="#" class="group lg:relative block aspect-w-4 aspect-h-5 rounded-xl dark:text-gray-200 text-slate-800">
         <span class="absolute inset-0 border-2 border-dashed border-black dark:border-white"></span>
 
         <div class="relative flex h-full transform items-end border-2 border-black dark:border-white bg-white dark:bg-black transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
             <div class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-                <svg xmlns="http://www.w3.org/2000/svg" class="size-10 sm:size-12" fill="none" viewBox="0 0 24 24"
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-10 sm:size-12 mt-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
 
                 <h2 class="mt-4 text-xl font-medium sm:text-2xl ">Go around the world</h2>
+                <div>
+                    <img src="../../../public/assets/img/497076.jpg" alt="Message Image"
+                    class="fluid my-4 rounded-lg">
+                </div>
             </div>
 
             <div class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
