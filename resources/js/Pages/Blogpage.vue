@@ -112,6 +112,27 @@ const formatCreatedAt = (createdAt: any) => {
           <Blogcard />
    
         </div>
+        <!-- <div class="">
+          <div class="container">
+              <div class="ball"></div>
+          </div>  
+        </div> -->
+
+        <div class="">
+
+<ul  class="w-1/4 ms-12 border-8 rounded-xl">
+ <li class="border-8 rounded-lg">
+  <label> <input type="radio" name="source" />Google</label>
+ </li>
+ <li class="border-8 rounded-lg">
+  <label> <input type="radio" name="source" />Word of Mouth</label>
+ </li>
+ <li class="border-8 rounded-lg">
+  <label> <input type="radio" name="source" />Other</label>
+ </li>
+</ul>
+        </div>
+
          <!-- </div> -->
     </AppLayout>
 
