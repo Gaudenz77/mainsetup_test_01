@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
+import Blogcard from '@/Components/Blogcard.vue';
 
 import { Head } from "@inertiajs/vue3";
 import axios from 'axios';
@@ -61,8 +62,8 @@ const formatCreatedAt = (createdAt: any) => {
 
     <AppLayout>
       <template #header>
-        <h2 class="bricolage-grotesque-mainsetup-lead">
-          Pinboard hey hey YALLZIES !!!
+        <h2 class="bricolage-grotesque-mainsetup-lead text-black dark:text-white text-end">
+          Pinboard hey hey YALLZIES !!!!!
         </h2>
       </template>
       <!-- <div
@@ -97,11 +98,19 @@ const formatCreatedAt = (createdAt: any) => {
             </div>
           </a>
         </div> -->
-        <div class="flex flex-col sm:flex-row justify-center m-8 gap-8 ">
-            <div class="bricolage-grotesque-mainsetup w-full sm:w-1/4 bg-red-500 ps-16 p-8 lg:relative top-8 rounded-tr-3xl rounded-bl-full ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae cum et rem officia earum eligendi ad saepe consequatur cupiditate, totam aut molestiae ipsam repellendus harum eum quos ducimus? Iusto, dolor.</div>
-            <div class="w-full sm:w-1/4 bg-blue-500 ps-16 p-8 lg:relative top-16 rounded-e-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quisquam incidunt reiciendis quis laborum, vero ratione, ea architecto ut sit repellendus iste enim nisi et aut error optio assumenda porro?</div>
-            <div class="w-full sm:w-1/4 bg-green-500 ps-16 p-8 lg:relative bottom-3 rounded-s-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
-            <div class="w-full sm:w-1/4 bg-yellow-500 ps-16 p-8 lg:relative top-8 rounded-e-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
+        <div class="flex flex-col sm:flex-row justify-center m-8 gap-8 text-black dark:text-white text-left">
+            <div class="bricolage-grotesque-mainsetup w-full sm:w-1/4 bg-red-500  ps-4 pe-8 pt-8 lg:relative top-8 rounded-tr-3xl rounded-bl-full">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae cum et rem officia earum eligendi ad saepe consequatur cupiditate, totam aut molestiae ipsam repellendus harum eum quos ducimus? Iusto, dolor.</div>
+            <div class="w-full sm:w-1/4 bg-orange-400 ps-4 pe-8 pt-8 lg:relative top-16 rounded-e-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quisquam incidunt reiciendis quis laborum, vero ratione, ea architecto ut sit repellendus iste enim nisi et aut error optio assumenda porro?</div>
+            <div class="w-full sm:w-1/4 bg-green-500  ps-4 pe-8 pt-8 lg:relative bottom-3 rounded-s-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
+            <div class="w-full sm:w-1/4 bg-yellow-500  ps-4 pe-8 pt-8 lg:relative top-8  rounded-tr-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus quo ad, facere numquam, veniam aliquid a perspiciatis, nulla corrupti quam quas molestiae iste fuga expedita placeat officia quia dolorem! Quod.</div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center mx-16 mt-32 gap-8 text-black dark:text-white text-left">
+          <Blogcard />
+          <Blogcard />
+          <Blogcard />
+          <Blogcard />
+   
         </div>
          <!-- </div> -->
     </AppLayout>

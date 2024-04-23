@@ -10,6 +10,10 @@
     display: none;
 }
 
+html {
+  background-color: black;
+}
+
 body {
     font-family: "Bricolage Grotesque", sans-serif !important;
 }
@@ -37,7 +41,7 @@ body {
   }
 
   .bricolage-grotesque-mainsetup-lead {
-    font-size:4rem;
+    font-size:2rem;
     font-family: "Bricolage Grotesque", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -48,7 +52,7 @@ body {
   }
 
   .bricolage-grotesque-mainsetup-lead:hover {
-    font-size:4rem;
+    font-size:2rem;
     font-family: "Bricolage Grotesque", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -56,3 +60,11 @@ body {
     font-variation-settings:
       "wdth" 300, "opsz" 12;
   }
+
+/*   .testdark {
+    background-color: aqua;
+  }
+
+  .dark .testdark {
+    background-color:beige;
+  } */
