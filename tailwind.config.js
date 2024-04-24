@@ -5,9 +5,9 @@ import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    daisyui: {
-        themes: ["cyberpunk"],
-      },
+    /* daisyui: {
+        themes: ["light", "dark", "cyberpunk", "retro", "valentine"],
+      }, */
     darkMode: ['selector'],
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
