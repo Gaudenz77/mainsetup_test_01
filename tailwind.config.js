@@ -1,9 +1,13 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    daisyui: {
+        themes: ["cyberpunk"],
+      },
     darkMode: ['selector'],
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -21,5 +25,5 @@ module.exports = {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, require("daisyui")],
 };

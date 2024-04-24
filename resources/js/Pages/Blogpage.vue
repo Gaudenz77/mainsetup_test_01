@@ -65,6 +65,9 @@ const formatCreatedAt = (createdAt: any) => {
         <h2 class="bricolage-grotesque-mainsetup-lead text-black dark:text-white text-end">
           Pinboard hey hey YALLZIES !!!!!
         </h2>
+        <div class="">
+          <button class="btn btn-info">Info</button>
+        </div>
       </template>
       <!-- <div
         class="container min-h-screen grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-center my-12 min-h-100"> -->
