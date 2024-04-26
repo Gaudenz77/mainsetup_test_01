@@ -109,3 +109,6 @@ body {
   border: 2px solid #f806e4;
 } */
 
+input [type="password"] {
+  letter-spacing: 3rem;
+}
