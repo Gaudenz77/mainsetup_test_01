@@ -16,12 +16,17 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/messages', [BlogController::class, 'index'])->name('messages.index');
-Route::get('/messages/create', [BlogController::class, 'create'])->name('messages.create');
-Route::post('/messages', [BlogController::class, 'store'])->name('messages.store');
-Route::get('/messages/{message}/edit', [BlogController::class, 'edit'])->name('messages.edit');
-Route::put('/messages/{message}', [BlogController::class, 'update'])->name('messages.update');
-Route::delete('/messages/{message}', [BlogController::class, 'destroy'])->name('messages.destroy');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+Route::put('/blogs/{blog}', [BlogController::class, 'update'])->name('blogs.update');
+Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blogs.destroy');
+
+Route::get('/singlestory/{message}', [BlogController::class, 'showSingleStory'])->name('singlestory.show');
+ 
+// Route for non-authenticated users to fetch messages
+Route::get('/public/messages', [BlogController::class, 'publicIndex'])->name('messages.publicIndex');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

@@ -54,7 +54,7 @@ const submitForm = async () => {
     // Append user ID
     formDataToSend.append('user_id', authId);
     // Send form data using axios
-    const response = await axios.post('/messages', formDataToSend, {
+    const response = await axios.post('/blogs', formDataToSend, {
       headers: {
         'X-CSRF-TOKEN': csrfToken,
         'Content-Type': 'multipart/form-data'
@@ -62,7 +62,7 @@ const submitForm = async () => {
     });
     console.log(response.data);
     // Handle success response
-    successMessage.value = response.data.message;
+    successMessage.value = response.data.blog;
     // Clear form data
     formData.value.title = '';
     formData.value.leadtext = '';
@@ -109,7 +109,7 @@ const submitForm = async () => {
                                     <input type="text" id="leadtext" v-model="formData.leadtext" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                     <div>
-                                    <label for="message" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Message</label>
+                                    <label for="message" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Text</label>
                                     <textarea id="message" v-model="formData.message" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800  dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                                     </div>
                                     <div>
@@ -118,22 +118,53 @@ const submitForm = async () => {
                                     
                                     </div>
                                     <div>
-                                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <button type="submit" class="btn btn-success">
                                         Submit
                                     </button>
                                     </div>
                                 </form>
                             </p>
 
-                            <p class="mt-4 text-sm">
-                                <!-- <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700">
-                                    Explore the documentation
+                            <!-- Tailwind modal for displaying success message -->
+                            <div v-if="successMessage" class="fixed inset-0 overflow-y-auto">
+                            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                                </div>
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500">
-                                        <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                                    </svg>
-                                </a> -->
-                            </p>
+                                        <!-- This is the modal container -->
+                                        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                                        <!-- Modal panel, show/hide based on modal state. -->
+                                        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                            <div class="sm:flex sm:items-start">
+                                            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                                                <!-- Heroicon name: check -->
+                                                <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                                <h3 class="text-lg font-medium text-gray-900" id="modal-headline">
+                                                Success!
+                                                </h3>
+                                                <div class="mt-2">
+                                                <p class="text-sm text-gray-500">
+                                                    {{ successMessage }}
+                                                </p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                                            <a href="/blogpage" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                            Go to PinBoard
+                                            </a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
 
                         <div>
@@ -148,16 +179,6 @@ const submitForm = async () => {
 
                             <p class="mt-4 text-gray-500 text-sm leading-relaxed">
                                 IMAGE TABLE                
-                            </p>
-
-                            <p class="mt-4 text-sm">
-                                <!-- <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-indigo-700">
-                                    Start watching Laracasts
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500">
-                                        <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                                    </svg>
-                                </a> -->
                             </p>
                         </div>
 
