@@ -82,7 +82,7 @@ const formatCreatedAt = (createdAt: any) => {
                 <i class="fa-solid fa-earth-africa fa-2x mt-3"></i>
                 <h2 class="mt-4 text-xl font-medium sm:text-2xl">
 
-                  <h1 class="text-4xl font-bold">{{ blog.title }}</h1>
+                  <h1 class="uppercase text-4xl font-bold">{{ blog.title }}</h1>
                 </h2>
                 
                 <div>
@@ -94,7 +94,7 @@ const formatCreatedAt = (createdAt: any) => {
               <div class="absolute p-4 opacity-0 transition-opacity group-hover:lg:relative group-hover:opacity-100 sm:p-6 lg:p-8">
                 <h3 class="mt-4 text-xl font-medium sm:text-2xl">{{ blog.title }}</h3>
                 <p class="mt-4 text-sm sm:text-base">
-                <h3 class="text-xl italic">{{ blog.leadtext }}</h3>
+                <h3 class="text-lg">{{ blog.leadtext }}</h3>
                 </p>
                 <p>Created At: {{ formatCreatedAt(blog.created_at) }}</p>
                 <p class="mt-8 font-bold"><a :href="'/singlestory/' + blog.id" class="read-more-link">Read more</a>

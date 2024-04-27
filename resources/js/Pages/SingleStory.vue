@@ -82,7 +82,7 @@ const cancelEdit = () => {
             </div>
             <!-- Lower row with centered content -->
             <div class="flex items-center justify-center h-1/2">
-                <div class="w-1/2 py-12">
+                <div class="lg:w-1/2 md:w-2/3 sm:w-full px-4 py-12">
                     <!-- Content goes here -->
                     <h1 v-if="editMode" class="text-3xl font-bold mb-4">
                         <input v-model="props.blog.title" class="w-full border-gray-300 text-slate-800 rounded-md p-2">
@@ -91,9 +91,11 @@ const cancelEdit = () => {
                     <p v-if="editMode" class="text-lg leading-relaxed">
                         <textarea v-model="props.blog.leadtext" class="w-full border-gray-300 text-slate-800 rounded-md p-2"></textarea>
                     </p>
+                    
                     <p v-else class="text-lg leading-relaxed">{{ props.blog.leadtext }}</p>
                     <!-- Show textarea for editing blog if in edit mode -->
-                    <textarea v-if="editMode" v-model="props.blog.message" class="w-full border-gray-300 text-slate-800 rounded-md p-2"></textarea>
+                    <hr class="border-dashed border-2 bg-orange-500 my-3">
+                    <textarea v-if="editMode" v-model="props.blog.message" class="w-full   text-slate-800 rounded-md p-2 h-[300px]"></textarea>
                     <!-- Show blog content if not in edit mode -->
                     <p v-else class="textSingle text-sm">{{ props.blog.message }}</p>
                     <!-- Buttons for edit and delete -->
