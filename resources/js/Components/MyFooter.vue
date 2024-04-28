@@ -190,7 +190,7 @@
         </div>
       </div>
     </footer> -->
-      <footer class="footer p-10 bg-neutral dark:bg-white text-neutral-content mt-12">
+      <footer class="footer p-10 bg-neutral text-neutral-content mt-12">
 
         <nav>
           <aside>
