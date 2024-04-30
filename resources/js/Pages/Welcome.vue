@@ -3,6 +3,7 @@ import type { PropType } from 'vue'
 import { computed } from 'vue'
 import {route} from 'ziggy-js'
 import { Head, Link, usePage } from '@inertiajs/vue3'
+import AppLayout from '@/Layouts/AppLayout.vue';
 
 defineProps({
   canLogin: Boolean as PropType<boolean>,
