@@ -61,6 +61,27 @@ body {
       "wdth" 300, "opsz" 12;
   }
 
+  .bricolage-grotesque-welcome {
+    font-size:7rem;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100, "opsz" 90;
+      transition: font-variation-settings 0.3s ease;
+  }
+
+  .bricolage-grotesque-welcome:hover {
+    font-size:7rem;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 300, "opsz" 12;
+  }
+
 /*   .testdark {
     background-color: aqua;
   }
@@ -111,4 +132,8 @@ body {
 
 input [type="password"] {
   letter-spacing: 3rem;
+}
+
+.formOwnOne {
+
 }
