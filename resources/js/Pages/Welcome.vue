@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts" >
 import type { PropType } from 'vue'
 import { computed } from 'vue'
 import {route} from 'ziggy-js'
@@ -12,8 +12,9 @@ const props = defineProps<{
     laravelVersion: string;
     phpVersion: string;
 
+ 
     auth: Object;
-    message: {
+    blog: {
         id: number;
         user_id: number;
         title: string;
@@ -29,44 +30,55 @@ const props = defineProps<{
 const loggedIn = computed(() => {
    return !!usePage().props.auth.user
 })
+
+import { ref } from 'vue';
+const content = ref([
+    'Content for first row',
+    'Content for second row',
+    // Add more content as needed
+]);
 </script>
 
 <template>
-
     <Head title="Welcome" />
 
-    <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div  v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
-            <Link  v-if="loggedIn" :href="route('dashboard')"  :active="route().current('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
-            Dashboard</Link>
+    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+        <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
+            <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
+                Dashboard
+            </Link>
             <template v-else>
                 <Link :href="route('login')" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</Link>
-
-                <Link  v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
+                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
         </div>
 
-
-        
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-                
+
+                <!-- Tailwind Grid Layout -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Loop through content to generate each row -->
+                    <template v-for="(blog, index) in content" :key="index">
+                        <!-- Check if index is even or odd for column placement -->
+                        <div :class="(index % 2 === 0) ? 'col-span-1 flex justify-center' : 'col-span-1 flex justify-center order-last'">
+                            {{ blog }}
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="col-span-1 border-l border-gray-300 dark:border-gray-700"></div>
+                    </template>
+                </div>
+
             </div>
 
             <div class="mt-16">
                 <div class="flex flex-auto justify-start">
                     <div class="bricolage-grotesque-welcome text-stone-600 text-center">WELCOME <br> to my <br>UNIVERSE!</div>
-
-                      
-                    </div>
                 </div>
             </div>
-
-
         </div>
-
-    
+    </div>
 </template>
 
 <style>

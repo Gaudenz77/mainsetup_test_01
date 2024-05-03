@@ -74,7 +74,7 @@ onMounted(() => {
   <!-- Include the Modal component -->
   <Modal :show="previewImage !== null" maxWidth="2xl" :closeable="true" @close="closeImagePreview">
   <div class="modal-content">
-    <span class="close" @click="closeImagePreview">&times;</span>
+    <span class="close" @click="closeImagePreview"><i class="fa-solid fa-circle-xmark p-3"></i></span>
     <!-- Conditional rendering of img element -->
     <template v-if="previewImage !== null">
       <img :src="previewImage" alt="Preview Image" />
@@ -100,14 +100,13 @@ onMounted(() => {
 }
 
 .modal-content {
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 700px;
+
+
+
 }
 
 .close {
-  color: #971212;
+  color: #4b4040;
   float: right;
   font-size: 28px;
   font-weight: bold;
