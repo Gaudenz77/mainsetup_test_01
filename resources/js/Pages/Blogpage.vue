@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Blogcard from '@/Components/Blogcard.vue';
-
 import { Head } from "@inertiajs/vue3";
-import axios from 'axios';
-
 
 </script>
 

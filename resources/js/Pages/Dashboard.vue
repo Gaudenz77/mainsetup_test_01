@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import AppLayout from '@/Layouts/AppLayout.vue';
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Welcome from '@/Components/Welcome.vue';
+import ImageTable from '@/Components/ImageTable.vue';
 import { Head } from "@inertiajs/vue3";
 import axios from 'axios';
 import { ref, Ref } from 'vue';
@@ -76,16 +78,24 @@ const submitForm = async () => {
 
 <template>
     <AppLayout title="Dashboard">
-        <template #header>
+        <!-- <template #header>
             <h2 class="bricolage-grotesque-mainsetup-lead font-semibold text-xl text-gray-800 dark:text-slate-200 leading-tight">
                 Dashboard
             </h2>
-        </template>
+        </template> -->
 
         <div class="lg:py-12 sm:pt-0">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-zinc-950 overflow-hidden shadow-xl sm:rounded-lg">
                     <!-- <Welcome /> -->
+                    <div class="p-6 lg:p-8 dark:bg-white bg-zinc-600  border-b border-gray-200">
+                    <a class="flex md:justify-start justify-center items-center" href="/" >
+                        <ApplicationLogo class="block h-12 w-auto  fa-beat-fade" />
+                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium text-gray-100 dark:text-stone-800">
+                        Welcome to your Dashoboard Command Center</h1>
+                    </a>
+                </div>
+                    
                     <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
                         <div>
                             <div class="flex items-center">
@@ -178,7 +188,8 @@ const submitForm = async () => {
                             </div>
 
                             <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                                IMAGE TABLE                
+                                IMAGE TABLE  
+                                <ImageTable />              
                             </p>
                         </div>
 
@@ -215,5 +226,45 @@ const submitForm = async () => {
                 </div>
             </div>
         </div>
+
+        
     </AppLayout>
 </template>
+
+
+
+<style scoped>
+/* Style for modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>

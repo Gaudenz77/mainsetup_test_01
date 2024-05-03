@@ -5,14 +5,30 @@ import {route} from 'ziggy-js'
 import { Head, Link, usePage } from '@inertiajs/vue3'
 import AppLayout from '@/Layouts/AppLayout.vue';
 
-defineProps({
-  canLogin: Boolean as PropType<boolean>,
-  canRegister: Boolean as PropType<boolean>,
-  laravelVersion: String as PropType<string>,
-  phpVersion: String as PropType<string>,
-})
 
-const user = computed(() => usePage().props?.user)
+const props = defineProps<{
+    canLogin?: boolean;
+    canRegister?: boolean;
+    laravelVersion: string;
+    phpVersion: string;
+
+    auth: Object;
+    message: {
+        id: number;
+        user_id: number;
+        title: string;
+        leadtext: string;
+        message: string;
+        image: string | null;
+    };
+    authId: number;
+}>(); 
+
+/* const user = computed(() => usePage().props?.user) */
+
+const loggedIn = computed(() => {
+   return !!usePage().props.auth.user
+})
 </script>
 
 <template>
@@ -21,16 +37,18 @@ const user = computed(() => usePage().props?.user)
 
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div v-if="canLogin" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
-            <Link v-if="user" :href="route('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
+        <div  v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
+            <Link  v-if="loggedIn" :href="route('dashboard')"  :active="route().current('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
             Dashboard</Link>
             <template v-else>
                 <Link :href="route('login')" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</Link>
 
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
+                <Link  v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
         </div>
 
+
+        
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
                 
