@@ -107,7 +107,7 @@ onMounted(() => {
 }
 
 .close {
-  color: #fff;
+  color: #971212;
   float: right;
   font-size: 28px;
   font-weight: bold;
