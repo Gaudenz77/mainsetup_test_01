@@ -3,6 +3,9 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import Blogcard from '@/Components/Blogcard.vue';
 import { Head } from "@inertiajs/vue3";
 
+const props = defineProps<{
+    authId: number; // Add authId prop
+}>();
 </script>
 
 <template>

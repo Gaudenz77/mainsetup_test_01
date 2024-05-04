@@ -75,7 +75,7 @@ const cancelEdit = () => {
                 Single Story No. {{ props.blog.id }}
             </h2>
         </template>
-        <div class="min-h-screen text-black dark:text-white">
+        <div class="min-h-screen ">
             <!-- Upper row with full-width image -->
             <div class="relative h-[500px] overflow-hidde">
                 <img v-if="blog.image" :src="'/storage/' + blog.image" class="absolute inset-0 w-full h-full object-cover object-center" alt="blog Image" />
@@ -100,10 +100,10 @@ const cancelEdit = () => {
                     <p v-else class="textSingle text-sm">{{ props.blog.message }}</p>
                     <!-- Buttons for edit and delete -->
                     <div class="flex justify-center mt-4 gap-2">
-                        <button v-if="props.authId === props.blog.user_id" @click="!editMode ? startEditMode() : updateBlog()" class="text-white bg-yellow-500 px-4 py-2 rounded-md mr-0">{{ !editMode ? 'Edit' : 'Update' }}</button>
-                        <button v-if="props.authId === props.blog.user_id && !editMode" @click="deleteBlog(props.blog.id)" class="text-white bg-red-500 px-4 py-2 rounded-md">Delete</button>
-                        <button v-if="editMode" @click="cancelEdit" class="text-white bg-gray-500 px-4 py-2 rounded-md">Cancel</button>
-                        <a href="/blogpage" type="button" class="text-white bg-gray-500 px-4 py-2 rounded-md">Back to Blogpage</a>
+                        <button v-if="props.authId === props.blog.user_id" @click="!editMode ? startEditMode() : updateBlog()" class="btn text-white bg-yellow-500 px-4 py-2  mr-0">{{ !editMode ? 'Edit' : 'Update' }}</button>
+                        <button v-if="props.authId === props.blog.user_id && !editMode" @click="deleteBlog(props.blog.id)" class="btn text-white bg-red-500 px-4 py-2 ">Delete</button>
+                        <button v-if="editMode" @click="cancelEdit" class="btn text-white bg-gray-500 px-4 py-2">Cancel</button>
+                        <a href="/blogpage" type="button" class="btn text-white bg-gray-500 px-4 py-2">Back to Blogpage</a>
                         
                     </div>
                     <!-- admin only start -->

@@ -48,7 +48,7 @@ onMounted(() => {
 
 <template>
   <!-- Blog Table -->
-  <table>
+  <table data-theme="">
     <thead>
       <tr>
         <th>Title</th>
@@ -95,8 +95,8 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9);
+ /*  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9); */
 }
 
 .modal-content {

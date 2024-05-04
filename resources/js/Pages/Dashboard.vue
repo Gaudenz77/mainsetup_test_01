@@ -92,7 +92,7 @@ const submitForm = async () => {
                     <div class="p-6 lg:p-8 dark:bg-white bg-zinc-600  border-b border-gray-200">
                     <a class="flex md:justify-start justify-center items-center" href="/" >
                         <ApplicationLogo class="block h-12 w-auto  fa-beat-fade" />
-                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium text-gray-100 dark:text-stone-800">
+                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium text-gray-100 dark:text-stone-800 cyberpunk:bg-pink-800">
                         Welcome to your Dashoboard Command Center</h1>
                     </a>
                 </div>
@@ -188,7 +188,7 @@ const submitForm = async () => {
                                 </h2>
                             </div>
 
-                            <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                            <p class="mt-4 text-sm leading-relaxed">
                                 IMAGE TABLE  
                                 <ImageTable />              
                             </p>
