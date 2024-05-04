@@ -77,14 +77,15 @@ const submitForm = async () => {
 </script>
 
 <template>
+    
     <AppLayout title="Dashboard">
-        <!-- <template #header>
+        <template #header>
             <h2 class="bricolage-grotesque-mainsetup-lead font-semibold text-xl text-gray-800 dark:text-slate-200 leading-tight">
                 Dashboard
             </h2>
-        </template> -->
+        </template>
 
-        <div class="lg:py-12 sm:pt-0">
+        <div class="lg:py-12 sm:pt-0" data-theme="">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-zinc-950 overflow-hidden shadow-xl sm:rounded-lg">
                     <!-- <Welcome /> -->
@@ -128,7 +129,7 @@ const submitForm = async () => {
                                     
                                     </div>
                                     <div>
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn">
                                         Submit
                                     </button>
                                     </div>
