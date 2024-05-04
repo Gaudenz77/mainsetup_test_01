@@ -2,8 +2,9 @@
 import type { PropType } from 'vue'
 import { computed } from 'vue'
 import {route} from 'ziggy-js'
-import { Head, Link, usePage } from '@inertiajs/vue3'
+import { Head, Link, router, usePage } from '@inertiajs/vue3'
 import AppLayout from '@/Layouts/AppLayout.vue';
+import MyNavbar from '@/Components/MyNavbar.vue';
 
 
 const props = defineProps<{
@@ -27,10 +28,13 @@ const props = defineProps<{
 
 /* const user = computed(() => usePage().props?.user) */
 
-const loggedIn = computed(() => {
-   return !!usePage().props.auth.user
-})
+    const loggedIn = computed(() => {
+    return !!usePage().props.auth.user
+    })
 
+const logout = () => {
+    router.post(route('logout'));
+};
 import { ref } from 'vue';
 const content = ref([
     'Content for first row',
@@ -40,10 +44,12 @@ const content = ref([
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <!-- <Head title="Welcome" /> -->
+    <!-- <MyNavbar /> -->
 
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
+            
             <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
                 Dashboard
             </Link>
@@ -75,6 +81,7 @@ const content = ref([
             <div class="mt-16">
                 <div class="flex flex-auto justify-start">
                     <div class="bricolage-grotesque-welcome text-stone-600 text-center">WELCOME <br> to my <br>UNIVERSE!</div>
+                    
                 </div>
             </div>
         </div>

@@ -1,13 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
-import ApplicationMark from '@/Components/ApplicationMark.vue';
-import Banner from '@/Components/Banner.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import MyFooter from '@/Components/MyFooter.vue';
 import { useDark, useToggle } from '@vueuse/core'
 
 const isDark = useDark()
@@ -27,37 +20,9 @@ localStorage.theme = 'dark'
 
 // Whenever the user explicitly chooses to respect the OS preference
 localStorage.removeItem('theme')
-
-defineProps({
-    title: String,
-});
-
-const showingNavigationDropdown = ref(false);
-
-const switchToTeam = (team) => {
-    router.put(route('current-team.update'), {
-        team_id: team.id,
-    }, {
-        preserveState: false,
-    });
-};
-
-const logout = () => {
-    router.post(route('logout'));
-};
-
-
 </script>
-
 <template>
-    <div>
-
-        <Head :title="title" />
-
-        <Banner />
-
-        <div class="min-h-screen bg-orange-400 dark:bg-emerald-500">
-            <nav class="bg-white dark:bg-zinc-600 border-b-4 border-gray-600 dark:border-gray-100">
+    <nav class="bg-white dark:bg-zinc-600 border-b-4 border-gray-600 dark:border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16 dark:text-white text-black">
@@ -335,20 +300,4 @@ const logout = () => {
                     </div>
                 </div>
             </nav>
-
-            <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white dark:bg-zinc-600 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                <slot />
-            </main>
-
-            <MyFooter />
-        </div>
-    </div>
 </template>
