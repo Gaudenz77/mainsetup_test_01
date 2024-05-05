@@ -48,6 +48,9 @@ Route::middleware([
     Route::get('/blogpage', function () {
         return Inertia::render('Blogpage');
     })->name('blogpage');
+/*     Route::get('/', function () {
+        return Inertia::render('Welcome');
+    })->name('welcome'); */
 
     
 
