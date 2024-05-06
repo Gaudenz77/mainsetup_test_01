@@ -87,23 +87,23 @@ const submitForm = async () => {
 
         <div class="lg:py-12 sm:pt-0" data-theme="">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-zinc-950 overflow-hidden shadow-xl sm:rounded-lg">
+                <div class=" overflow-hidden shadow-xl sm:rounded-lg"> <!-- bg-white dark:bg-zinc-950 -->
                     <!-- <Welcome /> -->
                     <div class="p-6 lg:p-8 dark:bg-white bg-zinc-600  border-b border-gray-200">
                     <a class="flex md:justify-start justify-center items-center" href="/" >
                         <ApplicationLogo class="block h-12 w-auto  fa-beat-fade" />
-                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium text-gray-100 dark:text-stone-800 cyberpunk:bg-pink-800">
+                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium cyberpunk:bg-pink-800"> <!-- text-gray-100 dark:text-stone-800  -->
                         Welcome to your Dashoboard Command Center</h1>
                     </a>
                 </div>
                     
-                    <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
+                    <div class=" grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8"> <!-- bg-gray-200 bg-opacity-25 -->
                         <div>
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
-                                <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                <h2 class="ms-3 text-xl font-semibold "> <!--text-gray-900 dark:text-gray-100 -->
                                     <a href="https://laravel.com/docs">Create New Blogs</a>
                                 </h2>
                             </div>
@@ -112,19 +112,19 @@ const submitForm = async () => {
                                 <!-- CREATE BLOGS FORM -->
                                 <form @submit.prevent="submitForm" enctype="multipart/form-data" class="formOwnOne space-y-4">
                                     <div>
-                                    <label for="title" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Title</label>
+                                    <label for="title" class="block text-sm font-medium ">Title</label> 
                                     <input type="text" id="title" v-model="formData.title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                     <div>
-                                    <label for="leadtext" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Leadtext</label>
+                                    <label for="leadtext" class="block text-sm font-medium ">Leadtext</label>
                                     <input type="text" id="leadtext" v-model="formData.leadtext" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                     <div>
-                                    <label for="message" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Text</label>
+                                    <label for="message" class="block text-sm font-medium ">Text</label>
                                     <textarea id="message" v-model="formData.message" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800  dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                                     </div>
                                     <div>
-                                    <Label for="image" class="block text-sm font-medium text-zinc-800 dark:text-zinc-100">Image</Label>
+                                    <Label for="image" class="block text-sm font-medium">Image</Label>
                                     <Input type="file" id="image" accept="image/*" @change="handleImageChange" class="mt-1 focus:ring-indigo-500 text-zinc-100 dark:text-zinc-800 focus:border-indigo-500 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md fileInputOwn" />
                                     
                                     </div>
