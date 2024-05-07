@@ -1,5 +1,7 @@
 <script setup lang="ts" >
 import type { PropType } from 'vue'
+import { ref } from 'vue'
+import { onMounted } from 'vue' // Remove 'type' specifier
 import { computed } from 'vue'
 import {route} from 'ziggy-js'
 import { Head, Link, router, usePage } from '@inertiajs/vue3'
@@ -28,19 +30,26 @@ const props = defineProps<{
 
 /* const user = computed(() => usePage().props?.user) */
 
-    const loggedIn = computed(() => {
-    return !!usePage().props.auth.user
-    })
+const loggedIn = computed(() => !!usePage().props.auth.user)
 
 const logout = () => {
     router.post(route('logout'));
 };
-import { ref } from 'vue';
-const content = ref([
-    'Content for first row',
-    'Content for second row',
-    // Add more content as needed
-]);
+
+import axios from 'axios'
+
+const blogs = ref([]);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('/blogs');
+        // Reorder the blogs based on their IDs
+        blogs.value = response.data.sort((a: { id: number }, b: { id: number }) => a.id - b.id);
+    } catch (error) {
+        console.error('Error fetching blogs:', error);
+    }
+});
+
 </script>
 
 <template>
@@ -62,27 +71,26 @@ const content = ref([
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-
                 <!-- Tailwind Grid Layout -->
                 <div class="grid grid-cols-2 gap-4">
                     <!-- Loop through content to generate each row -->
-                    <template v-for="(blog, index) in content" :key="index">
-                        <!-- Check if index is even or odd for column placement -->
+                    <template v-for="(blog, index) in blogs" :key="blog.id">
                         <div :class="(index % 2 === 0) ? 'col-span-1 flex justify-center' : 'col-span-1 flex justify-center order-last'">
-                            {{ blog }}
+                            <div class="p-4">
+                                <h2 class="text-lg font-semibold">{{ blog.title }}</h2>
+                                <p class="text-gray-600">{{ blog.leadtext }}</p>
+                            </div>
                         </div>
-
-                        <!-- Divider -->
-                        <div class="col-span-1 border-l border-gray-300 dark:border-gray-700"></div>
+                        <!-- Use conditional rendering to add border divs only if there's a next blog -->
+                        <template v-if="index !== blogs.length - 1">
+                            <div :class="(index % 2 === 0) ? 'col-span-1 border-l border-gray-300 dark:border-gray-700' : 'col-span-1 border-r border-gray-300 dark:border-gray-700'"></div>
+                        </template>
                     </template>
                 </div>
-
             </div>
-
             <div class="mt-16">
                 <div class="flex flex-auto justify-start">
                     <div class="bricolage-grotesque-welcome text-stone-600 text-center">WELCOME <br> to my <br>UNIVERSE!</div>
-                    
                 </div>
             </div>
         </div>
@@ -90,6 +98,8 @@ const content = ref([
 </template>
 
 <style>
+
+
 .bg-dots-darker {
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
 }
