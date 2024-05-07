@@ -1,9 +1,9 @@
-<script setup lang="ts" >
+<script setup lang="ts">
 import type { PropType } from 'vue'
 import { ref } from 'vue'
 import { onMounted } from 'vue' // Remove 'type' specifier
 import { computed } from 'vue'
-import {route} from 'ziggy-js'
+import { route } from 'ziggy-js'
 import { Head, Link, router, usePage } from '@inertiajs/vue3'
 import AppLayout from '@/Layouts/AppLayout.vue';
 import MyNavbar from '@/Components/MyNavbar.vue';
@@ -15,7 +15,7 @@ const props = defineProps<{
     laravelVersion: string;
     phpVersion: string;
 
- 
+
     auth: Object;
     blog: {
         id: number;
@@ -26,7 +26,19 @@ const props = defineProps<{
         image: string | null;
     };
     authId: number;
-}>(); 
+}>();
+
+interface Blog {
+    id: number;
+    user_id: number;
+    title: string;
+    leadtext: string;
+    message: string;
+    image: string | null;
+}
+
+const blogs = ref<Blog[]>([]);
+
 
 /* const user = computed(() => usePage().props?.user) */
 
@@ -38,12 +50,13 @@ const logout = () => {
 
 import axios from 'axios'
 
-const blogs = ref([]);
+/* const blogs = ref([]); */
 
 onMounted(async () => {
     try {
         const response = await axios.get('/blogs');
         // Reorder the blogs based on their IDs
+        console.log(response.data);
         blogs.value = response.data.sort((a: { id: number }, b: { id: number }) => a.id - b.id);
     } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -53,44 +66,62 @@ onMounted(async () => {
 </script>
 
 <template>
+
     <Head title="Welcome" />
     <!-- <MyNavbar /> -->
 
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <div
+        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
-            
-            <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')" class="text-sm text-gray-700 dark:text-gray-500 underline">
-                Dashboard
+
+            <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')"
+                class="text-sm text-gray-700 dark:text-gray-500 underline">
+            Dashboard
             </Link>
             <template v-else>
                 <Link :href="route('login')" class="text-sm text-gray-700 dark:text-gr
                 -500 underline">Login</Link>
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
+                <Link v-if="canRegister" :href="route('register')"
+                    class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
         </div>
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-                <!-- Tailwind Grid Layout -->
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Loop through content to generate each row -->
-                    <template v-for="(blog, index) in blogs" :key="blog.id">
-                        <div :class="(index % 2 === 0) ? 'col-span-1 flex justify-center' : 'col-span-1 flex justify-center order-last'">
-                            <div class="p-4">
-                                <h2 class="text-lg font-semibold">{{ blog.title }}</h2>
-                                <p class="text-gray-600">{{ blog.leadtext }}</p>
-                            </div>
+            <div class="flex flex-wrap justify-center">
+                <div class="my-8">
+                    <div class="flex flex-auto justify-center">
+                        <div class="bricolage-grotesque-welcome text-stone-600 text-center">WELCOME <br> to my
+                            <br>UNIVERSE!
                         </div>
-                        <!-- Use conditional rendering to add border divs only if there's a next blog -->
-                        <template v-if="index !== blogs.length - 1">
-                            <div :class="(index % 2 === 0) ? 'col-span-1 border-l border-gray-300 dark:border-gray-700' : 'col-span-1 border-r border-gray-300 dark:border-gray-700'"></div>
-                        </template>
-                    </template>
+                    </div>
                 </div>
             </div>
-            <div class="mt-16">
-                <div class="flex flex-auto justify-start">
-                    <div class="bricolage-grotesque-welcome text-stone-600 text-center">WELCOME <br> to my <br>UNIVERSE!</div>
+
+            <!-- Tailwind Grid Layout -->
+
+
+    <!-- Existing template code -->
+
+    <!-- Tailwind Grid Layout -->
+<!-- Tailwind Grid Layout -->
+<div class="flex flex-auto justify-center">
+                <!-- Loop through content to generate each row -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Loop through content to generate each blog post -->
+                    <template v-for="(blog, index) in blogs" :key="blog.id">
+                        <!-- Determine row and column placement -->
+                        <div>
+                            <div :class="{
+                                    'p-4 border-l dark:border-gray-300 border-gray-700': true,
+                                    'row-start-1 col-start-1': index % 2 === 0,
+                                    'row-start-2 col-start-2': index % 2 === 1
+                                }">
+                                <h2 class="text-lg text-start font-semibold">{{ blog.title }}</h2>
+                                <p class="text-gray-600 text-start">{{ blog.leadtext }}</p>
+                                <p class="text-gray-600 text-start h-[200px]"></p>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>
@@ -98,11 +129,10 @@ onMounted(async () => {
 </template>
 
 <style>
-
-
 .bg-dots-darker {
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
 }
+
 @media (prefers-color-scheme: dark) {
     .dark\:bg-dots-lighter {
         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
@@ -116,7 +146,7 @@ onMounted(async () => {
                         fill="#FF2D20" />
                 </svg> -->
 
-                            <!-- <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
+<!-- <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
                 <div class="text-center text-sm sm:text-start">
                     &nbsp;
                 </div>
