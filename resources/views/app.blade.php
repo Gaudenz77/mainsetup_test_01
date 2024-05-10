@@ -19,6 +19,10 @@
 <script src="https://cdn.tailwindcss.com"></script> --}}
 
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+        <script>
+            
+        </script>
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead

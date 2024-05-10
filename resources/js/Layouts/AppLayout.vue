@@ -10,7 +10,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import MyFooter from '@/Components/MyFooter.vue';
 import { useDark, useToggle } from '@vueuse/core'
 
-const isDark = useDark()
+/* const isDark = useDark()
 const toggleDark = useToggle(isDark)
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -26,7 +26,7 @@ localStorage.theme = 'light'
 localStorage.theme = 'dark'
 
 // Whenever the user explicitly chooses to respect the OS preference
-localStorage.removeItem('theme')
+localStorage.removeItem('theme') */
 
 defineProps({
     title: String,
@@ -83,13 +83,13 @@ const logout = () => {
                             </div>
 
                             <div class=" space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink class="darkmodeToggle">
+                                <!-- <NavLink class="darkmodeToggle">
                                     <button @click="toggleDark()">
                                         <i
                                             :class="['fa-solid  fa-2x', isDark ? 'fa-moon' : 'fa-sun', 'inline-block align-middle mr-2']"></i>
                                         <span>{{ isDark ? 'Dark' : 'Light' }}</span>
                                     </button>
-                                </NavLink>
+                                </NavLink> -->
                             </div>
 
                             <!-- DRPDOWN DAYSIUI THEMES RADIOS -->
