@@ -92,7 +92,7 @@ const submitForm = async () => {
                     <div class="p-6 lg:p-8 dark:bg-white bg-zinc-600  border-b border-gray-200">
                     <a class="flex md:justify-start justify-center items-center" href="/" >
                         <ApplicationLogo class="block h-12 w-auto  fa-beat-fade" />
-                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium cyberpunk:bg-pink-800"> <!-- text-gray-100 dark:text-stone-800  -->
+                        <h1 class="bricolage-grotesque-mainsetup-lead ps-4 text-base font-medium"> <!-- text-gray-100 dark:text-stone-800  -->
                         Welcome to your Dashoboard Command Center</h1>
                     </a>
                 </div>
@@ -103,28 +103,28 @@ const submitForm = async () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
-                                <h2 class="ms-3 text-xl font-semibold "> <!--text-gray-900 dark:text-gray-100 -->
+                                <h2 class="ms-3 text-xl font-semibold"> <!--text-gray-900 dark:text-gray-100 -->
                                     <a href="https://laravel.com/docs">Create New Blogs</a>
                                 </h2>
                             </div>
 
                             <p class="mt-4 text-gray-500 text-sm leading-relaxed">
                                 <!-- CREATE BLOGS FORM -->
-                                <form @submit.prevent="submitForm" enctype="multipart/form-data" class="formOwnOne space-y-4">
+                                <form @submit.prevent="submitForm" enctype="multipart/form-data" class="formOwnOne space-y-4" data-theme="">
                                     <div>
-                                    <label for="title" class="block text-sm font-medium ">Title</label> 
-                                    <input type="text" id="title" v-model="formData.title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    <label data-theme=""  for="title" class="block text-sm font-medium ">Title</label> 
+                                    <input  type="text" id="title" v-model="formData.title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                     <div>
-                                    <label for="leadtext" class="block text-sm font-medium ">Leadtext</label>
+                                    <label data-theme="" for="leadtext" class="block text-sm font-medium ">Leadtext</label>
                                     <input type="text" id="leadtext" v-model="formData.leadtext" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                     </div>
                                     <div>
-                                    <label for="message" class="block text-sm font-medium ">Text</label>
+                                    <label  data-theme=""for="message" class="block text-sm font-medium ">Text</label>
                                     <textarea id="message" v-model="formData.message" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 text-zinc-100 dark:text-zinc-800 bg-zinc-800  dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                                     </div>
                                     <div>
-                                    <Label for="image" class="block text-sm font-medium">Image</Label>
+                                    <label data-theme="" for="image" class="block text-sm font-medium">Image</label>
                                     <Input type="file" id="image" accept="image/*" @change="handleImageChange" class="mt-1 focus:ring-indigo-500 text-zinc-100 dark:text-zinc-800 focus:border-indigo-500 bg-zinc-800 dark:bg-zinc-100 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md fileInputOwn" />
                                     
                                     </div>
@@ -199,12 +199,12 @@ const submitForm = async () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                                 </svg>
-                                <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                <h2 class="ms-3 text-xl font-semibold">
                                     <a href="https://tailwindcss.com/">Uploaded Events / Publications </a>
                                 </h2>
                             </div>
 
-                            <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                            <p class="mt-4 0 text-sm leading-relaxed">
                                 EVENTS / PUBLICATIONS FORM
                             </p>
                         </div>
@@ -214,12 +214,12 @@ const submitForm = async () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                 </svg>
-                                <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                <h2 class="ms-3 text-xl font-semibold ">
                                     Uploaded Events / Publications (Chat?)
                                 </h2>
                             </div>
 
-                            <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                            <p class="mt-4  text-sm leading-relaxed">
                                 EVENTS / PUBLICATIONS TABLE  (CHAT FORM)
                             </p>
                         </div>

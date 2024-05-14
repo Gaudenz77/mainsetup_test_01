@@ -1,7 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
+import ApplicationMark from '@/Components/ApplicationMark.vue';
+import ThemeDropdown from '@/Components/ThemeDropdown.vue';
+import Banner from '@/Components/Banner.vue';
+import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
+import NavLink from '@/Components/NavLink.vue';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import MyFooter from '@/Components/MyFooter.vue';
 import { useDark, useToggle } from '@vueuse/core'
+
 
 /* const isDark = useDark()
 const toggleDark = useToggle(isDark)
@@ -22,7 +31,10 @@ localStorage.theme = 'dark'
 localStorage.removeItem('theme') */
 </script>
 <template>
-    <nav class="bg-white dark:bg-zinc-600 border-b-4 border-gray-600 dark:border-gray-100">
+
+
+
+<nav class=" border-b-4 border-gray-600 dark:border-gray-100"> <!-- bg-white dark:bg-zinc-600 -->
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16 dark:text-white text-black">
@@ -46,6 +58,7 @@ localStorage.removeItem('theme') */
                                     Blogpage
                                 </NavLink>
                             </div>
+                            
 
                             <div class=" space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <!-- <NavLink class="darkmodeToggle">
@@ -56,6 +69,9 @@ localStorage.removeItem('theme') */
                                     </button>
                                 </NavLink> -->
                             </div>
+
+                            <!-- DRPDOWN DAYSIUI THEMES RADIOS -->
+                            <ThemeDropdown />
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -300,4 +316,5 @@ localStorage.removeItem('theme') */
                     </div>
                 </div>
             </nav>
+
 </template>

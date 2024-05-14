@@ -9,6 +9,8 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import MyNavbar from '@/Components/MyNavbar.vue';
 
 
+
+
 const props = defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
@@ -66,14 +68,10 @@ onMounted(async () => {
 </script>
 
 <template>
-
-    <Head title="Welcome" />
-    <!-- <MyNavbar /> -->
-
-    <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+<!-- <AppLayout> -->
+    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+        
         <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
-
             <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')"
                 class="text-sm text-gray-700 dark:text-gray-500 underline">
             Dashboard
@@ -85,7 +83,7 @@ onMounted(async () => {
                     class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
         </div>
-
+    
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex flex-wrap justify-center">
                 <div class="my-8">
@@ -97,17 +95,10 @@ onMounted(async () => {
                 </div>
             </div>
 
-            <!-- Tailwind Grid Layout -->
-
-
-    <!-- Existing template code -->
-
-    <!-- Tailwind Grid Layout -->
-<!-- Tailwind Grid Layout -->
-<div class="flex flex-auto justify-center">
-                <!-- Loop through content to generate each row -->
+            <div class="flex flex-auto justify-center">
+                        <!-- Loop through content to generate each row -->
                 <div class="grid grid-cols-2 gap-4">
-                    <!-- Loop through content to generate each blog post -->
+                            <!-- Loop through content to generate each blog post -->
                     <template v-for="(blog, index) in blogs" :key="blog.id">
                         <!-- Determine row and column placement -->
                         <div>
@@ -126,6 +117,7 @@ onMounted(async () => {
             </div>
         </div>
     </div>
+<!-- </AppLayout> -->
 </template>
 
 <style>

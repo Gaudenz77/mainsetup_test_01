@@ -11,9 +11,9 @@ const props = defineProps<{
 <template>
   <div>
 
-    <Head title="Dashboard"></Head>
+    <!-- <Head title="Blogpage"></Head> -->
 
-    <AppLayout>
+    <AppLayout  title="Blogpage">
       <template #header>
         <h2 class="bricolage-grotesque-mainsetup-lead text-black dark:text-white text-end">
           Pinboard hey hey YALLZIES !!!!!

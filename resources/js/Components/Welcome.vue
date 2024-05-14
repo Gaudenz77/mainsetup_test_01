@@ -1,10 +1,14 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+
 </script>
 
 <template>
+
+    
     <div>
         <div class="p-6 lg:p-8 dark:bg-white bg-zinc-600  border-b border-gray-200">
+            
 
             <a class="flex md:justify-start justify-center items-center" href="/" >
                 <ApplicationLogo class="block h-12 w-auto  fa-beat-fade" />

@@ -69,7 +69,7 @@ const cancelEdit = () => {
     
     <Head title="Dashboard"></Head>
 
-    <AppLayout :blog="props.blog" :authId="props.authId">
+    <AppLayout  title="Singlestory" :blog="props.blog" :authId="props.authId">
         <template #header>
             <h2 class="font-semibold text-xl leading-tight text-black dark:text-white">
                 Single Story No. {{ props.blog.id }}
