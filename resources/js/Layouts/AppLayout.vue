@@ -72,7 +72,8 @@ const logout = () => {
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')" class="!text-black">
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')"
+                                    class="!text-black">
                                     Dashboard
                                 </NavLink>
                             </div>
@@ -98,7 +99,7 @@ const logout = () => {
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
-                            <div class="ms-3 relative"> 
+                            <div class="ms-3 relative">
                                 <!-- Teams Dropdown -->
                                 <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
                                     <template #trigger>

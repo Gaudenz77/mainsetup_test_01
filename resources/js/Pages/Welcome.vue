@@ -68,9 +68,10 @@ onMounted(async () => {
 </script>
 
 <template>
-<!-- <AppLayout> -->
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        
+    <!-- <AppLayout> -->
+    <div
+        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+
         <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
             <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')"
                 class="text-sm text-gray-700 dark:text-gray-500 underline">
@@ -83,7 +84,7 @@ onMounted(async () => {
                     class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
         </div>
-    
+
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex flex-wrap justify-center">
                 <div class="my-8">
@@ -96,17 +97,17 @@ onMounted(async () => {
             </div>
 
             <div class="flex flex-auto justify-center">
-                        <!-- Loop through content to generate each row -->
+                <!-- Loop through content to generate each row -->
                 <div class="grid grid-cols-2 gap-4">
-                            <!-- Loop through content to generate each blog post -->
+                    <!-- Loop through content to generate each blog post -->
                     <template v-for="(blog, index) in blogs" :key="blog.id">
                         <!-- Determine row and column placement -->
                         <div>
                             <div :class="{
-                                    'p-4 border-l dark:border-gray-300 border-gray-700': true,
-                                    'row-start-1 col-start-1': index % 2 === 0,
-                                    'row-start-2 col-start-2': index % 2 === 1
-                                }">
+                                'p-4 border-l dark:border-gray-300 border-gray-700': true,
+                                'row-start-1 col-start-1': index % 2 === 0,
+                                'row-start-2 col-start-2': index % 2 === 1
+                            }">
                                 <h2 class="text-lg text-start font-semibold">{{ blog.title }}</h2>
                                 <p class="text-gray-600 text-start">{{ blog.leadtext }}</p>
                                 <p class="text-gray-600 text-start h-[200px]"></p>
@@ -117,7 +118,7 @@ onMounted(async () => {
             </div>
         </div>
     </div>
-<!-- </AppLayout> -->
+    <!-- </AppLayout> -->
 </template>
 
 <style>
