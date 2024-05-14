@@ -108,7 +108,14 @@ const submitForm = async () => {
                                 </h2>
                             </div>
 
-                            <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                            <!-- New Popover in Browser POPOVER API-->
+                            <button class="btn " popovertarget="my-popover"> Open Popover </button>
+
+                            <div class="modal-box " id="my-popover" popover>
+                            <p>I am a popover with more information. Hit <kbd>esc</kbd> or click away to close me.</p>
+                            </div>
+
+                            <p class="mt-4 text-gray-500 text-sm leading-relaxed"   >                                                                                                                                                                                                       
                                 <!-- CREATE BLOGS FORM -->
                                 <form @submit.prevent="submitForm" enctype="multipart/form-data" class="formOwnOne space-y-4" data-theme="">
                                     <div>

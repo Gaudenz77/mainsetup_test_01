@@ -59,7 +59,7 @@ const cancelEdit = () => {
 };
 
     /* document.addEventListener("selectionchange", (e) => {
-        console.log(window.getSelection()?.toString());
+        console.log(window.getSelection()?.toString()); 
     }) */
 
 
@@ -71,7 +71,7 @@ const cancelEdit = () => {
 
     <AppLayout  title="Singlestory" :blog="props.blog" :authId="props.authId">
         <template #header>
-            <h2 class="font-semibold text-xl leading-tight text-black dark:text-white">
+            <h2 class=" font-semibold text-xl leading-tight ">
                 Single Story No. {{ props.blog.id }}
             </h2>
         </template>
@@ -80,7 +80,7 @@ const cancelEdit = () => {
             <div class="relative h-[500px] overflow-hidde">
                 <img v-if="blog.image" :src="'/storage/' + blog.image" class="absolute inset-0 w-full h-full object-cover object-center" alt="blog Image" />
             </div>
-            <!-- Lower row with centered content -->
+            <!-- Lower row with cen                 tered content -->
             <div class="flex items-center justify-center h-1/2">
                 <div class="lg:w-1/2 md:w-2/3 sm:w-full px-4 py-12">
                     <!-- Content goes here -->

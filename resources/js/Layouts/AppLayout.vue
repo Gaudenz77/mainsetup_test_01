@@ -57,11 +57,11 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen"> <!-- bg-orange-400 dark:bg-emerald-500 -->
-            <nav class=" border-b-4 border-gray-600 dark:border-gray-100"> <!-- bg-white dark:bg-zinc-600 -->
+        <div class="min-h-screen "> <!-- bg-orange-400 dark:bg-emerald-500 -->
+            <nav class="border-b-4 border-gray-600 dark:border-gray-100"> <!-- bg-white dark:bg-zinc-600 -->
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16 dark:text-white text-black">
+                    <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
@@ -73,13 +73,14 @@ const logout = () => {
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')"
-                                    class="!text-black">
+                                    >
                                     Dashboard
                                 </NavLink>
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('blogpage')" :active="route().current('blogpage')">
+                                <NavLink :href="route('blogpage')" :active="route().current('blogpage')"
+                                >
                                     Blogpage
                                 </NavLink>
                             </div>
@@ -110,7 +111,7 @@ const logout = () => {
 
                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor">
+                                                    stroke="currentColor">                              
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                                                 </svg>
