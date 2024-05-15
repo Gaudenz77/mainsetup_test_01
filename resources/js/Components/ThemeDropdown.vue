@@ -15,36 +15,39 @@ const selectedTheme = ref<Theme>('light');
 
 
 const themeClasses = computed(() => {
-  const themeColors: Record<Theme, { textColor: string;
-                                       bgColor: string }> = {
-    light: {
-      textColor: 'text-black',
-      bgColor: 'bg-emerald-500',
-    },
-    dark: {
-      textColor: 'text-white',
-      bgColor: 'bg-gray-800',
-    },
-    cupcake: {
-      textColor: 'text-pink-500',
-      bgColor: 'bg-pink-100',
-    },
-    bumblebee: {
-      textColor: 'text-orange-500',
-      bgColor: 'bg-orange-500',
-    },
-    forest: {
-      textColor: 'text-emerald-100',
-      bgColor: 'bg-orange-500',
-    },
-    black: {
-      textColor: 'text-coffee-500',
-      bgColor: 'bg-orange-500',
-    },
-    dracula: {
-      textColor: 'text-rose-500',
-      bgColor: 'bg-orange-500',
-    },
+  const themeColors: Record<Theme, { textColor: string; bgColor: string }> = {
+    light: { textColor: 'text-black', bgColor: 'bg-white' },
+  dark: { textColor: 'text-white', bgColor: 'bg-gray-800' },
+  cupcake: { textColor: 'text-pink-500', bgColor: 'bg-pink-100' },
+  bumblebee: { textColor: 'text-yellow-700', bgColor: 'bg-yellow-100' },
+  emerald: { textColor: 'text-green-500', bgColor: 'bg-green-100' },
+  corporate: { textColor: 'text-blue-500', bgColor: 'bg-blue-100' },
+  synthwave: { textColor: 'text-purple-500', bgColor: 'bg-purple-100' },
+  retro: { textColor: 'text-orange-500', bgColor: 'bg-orange-100' },
+  cyberpunk: { textColor: 'text-cyan-500', bgColor: 'bg-cyan-100' },
+  valentine: { textColor: 'text-red-500', bgColor: 'bg-red-100' },
+  halloween: { textColor: 'text-orange-500', bgColor: 'bg-orange-200' },
+  garden: { textColor: 'text-green-700', bgColor: 'bg-green-100' },
+  forest: { textColor: 'text-green-800', bgColor: 'bg-green-200' },
+  aqua: { textColor: 'text-blue-700', bgColor: 'bg-blue-100' },
+  lofi: { textColor: 'text-gray-500', bgColor: 'bg-gray-100' },
+  pastel: { textColor: 'text-pink-300', bgColor: 'bg-pink-50' },
+  fantasy: { textColor: 'text-purple-700', bgColor: 'bg-purple-100' },
+  wireframe: { textColor: 'text-gray-700', bgColor: 'bg-gray-50' },
+  black: { textColor: 'text-black', bgColor: 'bg-black' },
+  luxury: { textColor: 'text-yellow-700', bgColor: 'bg-gray-800' },
+  dracula: { textColor: 'text-red-600', bgColor: 'bg-gray-900' },
+  cmyk: { textColor: 'text-blue-600', bgColor: 'bg-yellow-50' },
+  autumn: { textColor: 'text-orange-600', bgColor: 'bg-orange-50' },
+  business: { textColor: 'text-blue-800', bgColor: 'bg-white' },
+  acid: { textColor: 'text-green-600', bgColor: 'bg-yellow-100' },
+  lemonade: { textColor: 'text-yellow-700', bgColor: 'bg-yellow-50' },
+  night: { textColor: 'text-blue-300', bgColor: 'bg-gray-900' },
+  coffee: { textColor: 'text-brown-800', bgColor: 'bg-brown-100' },
+  winter: { textColor: 'text-blue-700', bgColor: 'bg-blue-50' },
+  dim: { textColor: 'text-gray-500', bgColor: 'bg-gray-800' },
+  nord: { textColor: 'text-blue-500', bgColor: 'bg-blue-900' },
+  sunset: { textColor: 'text-orange-500', bgColor: 'bg-orange-100' }
     // Add other themes similarly
   };
   
