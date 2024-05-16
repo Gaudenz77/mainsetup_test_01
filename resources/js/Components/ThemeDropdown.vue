@@ -16,7 +16,7 @@ const selectedTheme = ref<Theme>('light');
 
 const themeClasses = computed(() => {
   const themeColors: Record<Theme, { textColor: string; bgColor: string }> = {
-    light: { textColor: 'text-black', bgColor: 'bg-white' },
+  light: { textColor: 'text-black', bgColor: 'bg-white' },
   dark: { textColor: 'text-white', bgColor: 'bg-gray-800' },
   cupcake: { textColor: 'text-pink-500', bgColor: 'bg-pink-100' },
   bumblebee: { textColor: 'text-yellow-700', bgColor: 'bg-yellow-100' },
