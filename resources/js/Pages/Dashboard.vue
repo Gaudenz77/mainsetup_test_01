@@ -111,7 +111,7 @@ const submitForm = async () => {
                             <!-- New Popover in Browser POPOVER API-->
                             <button class="btn " popovertarget="my-popover"> Open Popover </button>
 
-                            <div class="modal-box " id="my-popover" popover>
+                            <div class="modal-box invert" id="my-popover" popover>
                             <p>I am a popover with more information. Hit <kbd>esc</kbd> or click away to close me.</p>
                             </div>
 
