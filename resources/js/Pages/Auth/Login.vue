@@ -29,7 +29,7 @@ const submit = () => {
 };
 </script>
 
-<template>
+<template data-theme="">
     <Head title="Log in" />
 
     <AuthenticationCard>

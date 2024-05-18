@@ -51,13 +51,13 @@ const logout = () => {
 </script>
 
 <template>
-    <div data-theme="">
+    <div>
 
         <Head :title="title" />
 
         <Banner />
 
-        <div class="min-h-screen "> <!-- bg-orange-400 dark:bg-emerald-500 -->
+        <div class="min-h-screen " > <!-- bg-orange-400 dark:bg-emerald-500 -->
             <nav class="border-b-4 border-gray-600 dark:border-gray-100 invert"> <!-- bg-white dark:bg-zinc-600 -->
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,7 +198,7 @@ const logout = () => {
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400"  data-theme="">
+                                        <div class="block px-4 py-2 text-xs text-gray-400" >
                                             Manage Account
                                         </div>
 
