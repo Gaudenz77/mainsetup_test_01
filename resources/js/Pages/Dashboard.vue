@@ -80,8 +80,8 @@ const submitForm = async () => {
     
     <AppLayout title="Dashboard">
         <template #header>
-            <h2 class="bricolage-grotesque-mainsetup-lead font-semibold text-xl text-gray-800 dark:text-slate-200 leading-tight">
-                Dashboard
+            <h2 class="bricolage-grotesque-mainsetup-lead font-semibold text-xl   leading-tight">
+                Dashboard NEUE KAMPFIS GABRIELA
             </h2>
         </template>
 
@@ -104,12 +104,12 @@ const submitForm = async () => {
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
                                 <h2 class="ms-3 text-xl font-semibold"> <!--text-gray-900 dark:text-gray-100 -->
-                                    <a href="https://laravel.com/docs">Create New Blogs</a>
+                                    <a href="https://laravel.com/docs" class="cupcake">Create New Blogs</a>
                                 </h2>
                             </div>
 
                             <!-- New Popover in Browser POPOVER API-->
-                            <button class="btn " popovertarget="my-popover"> Open Popover </button>
+                            <button class="btn " popovertarget="my-popover" style=""> Open Popover </button>
 
                             <div class="modal-box invert" id="my-popover" popover>
                             <p>I am a popover with more information. Hit <kbd>esc</kbd> or click away to close me.</p>
@@ -275,4 +275,5 @@ const submitForm = async () => {
   text-decoration: none;
   cursor: pointer;
 }
+
 </style>
