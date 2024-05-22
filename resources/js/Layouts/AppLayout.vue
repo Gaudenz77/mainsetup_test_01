@@ -11,7 +11,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import MyFooter from '@/Components/MyFooter.vue';
 import { useDark, useToggle } from '@vueuse/core'
 
-/* const isDark = useDark()
+const isDark = useDark()
 const toggleDark = useToggle(isDark)
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -27,7 +27,7 @@ localStorage.theme = 'light'
 localStorage.theme = 'dark'
 
 // Whenever the user explicitly chooses to respect the OS preference
-localStorage.removeItem('theme') */
+localStorage.removeItem('theme')
 
 defineProps({
     title: String,
