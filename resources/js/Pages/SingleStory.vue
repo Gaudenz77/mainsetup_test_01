@@ -77,8 +77,8 @@ const cancelEdit = () => {
         </template>
         <div class="min-h-screen ">
             <!-- Upper row with full-width image -->
-            <div class="relative h-[500px] overflow-hidde">
-                <img v-if="blog.image" :src="'/storage/' + blog.image" class="absolute inset-0 w-full h-full object-cover object-center" alt="blog Image" />
+            <div class="singleBlogImgAbv relative h-[500px] overflow-hidde">
+                <img v-if="blog.image" :src="'/storage/' + blog.image" class="singleBlogImg absolute inset-0 w-full h-full object-cover object-center" alt="blog Image" />
             </div>
             <!-- Lower row with cen                 tered content -->
             <div class="flex items-center justify-center h-1/2">
@@ -125,4 +125,15 @@ const cancelEdit = () => {
 .textSingle {
     white-space: pre-wrap;
 }
+
+ .singleBlogImg {
+    position: relative;
+    z-index: -1;
+}
+
+.singleBlogimgAbv {
+    position: relative;
+    z-index: -1;
+}
+
 </style>
