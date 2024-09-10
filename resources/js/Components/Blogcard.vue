@@ -55,7 +55,7 @@ const formatCreatedAt = (createdAt: any) => {
     
         <div v-for="(blog, index) in blogs" :key="blog.id" :style="{ animationDelay: `${index * 100}ms` }" class="animate__animated animate__rotateIn">
         <!-- Your card content here -->
-        <a :href="'/singlestory/' + blog.id" class="flex bg-white transition hover:shadow-xl">
+        <a :href="'/singlestory/' + blog.id" class="flex myCards bg-white transition hover:shadow-xl">
             <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
                 <time datetime=""
                     class="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900">
@@ -103,6 +103,12 @@ const formatCreatedAt = (createdAt: any) => {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
+}
+
+.myCards {
+    position:relative;
+    z-index:-10;
+    /* display:none; */
 }
 </style>
 

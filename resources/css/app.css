@@ -137,3 +137,8 @@ input [type="password"] {
 .formOwnOne {
 
 }
+
+.singleBlogImgAbv {
+  position:relative;
+  z-index:-1;
+}
