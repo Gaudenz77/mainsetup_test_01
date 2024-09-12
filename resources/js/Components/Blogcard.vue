@@ -53,7 +53,7 @@ const formatCreatedAt = (createdAt: any) => {
 <template>
     <!-- BLOGCARD TEMPLATE ONE START -->
     
-        <div v-for="(blog, index) in blogs" :key="blog.id" :style="{ animationDelay: `${index * 100}ms` }" class="animate__animated animate__rotateIn">
+        <div v-for="(blog, index) in blogs" :key="blog.id" :style="{ animationDelay: `${index * 100}ms` } " class="blogCardIndex animate__animated animate__rotateIn">
         <!-- Your card content here -->
         <a :href="'/singlestory/' + blog.id" class="flex myCards bg-white transition hover:shadow-xl">
             <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
@@ -98,6 +98,11 @@ const formatCreatedAt = (createdAt: any) => {
 </template>
 
 <style scoped>
+
+.blogCardIndex {
+    /* position:relative;
+    z-index: -1; */
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
