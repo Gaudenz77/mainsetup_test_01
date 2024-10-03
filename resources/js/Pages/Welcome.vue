@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+/* import type { PropType } from 'vue' */
 import { ref } from 'vue'
 import { onMounted } from 'vue' // Remove 'type' specifier
 import { computed } from 'vue'
 import { route } from 'ziggy-js'
 import { Head, Link, router, usePage } from '@inertiajs/vue3'
-import AppLayout from '@/Layouts/AppLayout.vue';
-import MyNavbar from '@/Components/MyNavbar.vue';
+/* import AppLayout from '@/Layouts/AppLayout.vue';
+import MyNavbar from '@/Components/MyNavbar.vue'; */
 import MyFooter from '@/Components/MyFooter.vue';
 import ThemeDropdown from '@/Components/ThemeDropdown.vue';
-
-
-
 
 const props = defineProps<{
     canLogin?: boolean;
@@ -43,14 +40,17 @@ interface Blog {
 
 const blogs = ref<Blog[]>([]);
 
+/* ---- Evtl unused chech if error upcoming ---*/ 
 
-/* const user = computed(() => usePage().props?.user) */
+const user = computed(() => usePage().props?.user)
 
-const loggedIn = computed(() => !!usePage().props.auth.user)
+/* ---- Evtl unused chech if error upcoming ---*/ 
 
 const logout = () => {
     router.post(route('logout'));
 };
+
+const loggedIn = computed(() => props.auth !== null); // checks if auth is not null
 
 import axios from 'axios'
 
@@ -72,23 +72,24 @@ onMounted(async () => {
 <template>
     <!-- <Head title="Welcome" /> -->
 
-    <div 
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-dots-lighter  selection:bg-red-500 selection:text-white">
+    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-dots-lighter selection:bg-red-500 selection:text-white">
         
-        <div v-if="canLogin || loggedIn" class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
-            <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')"
+        <div class="sm:fixed sm:top-0 sm:end-0 p-6 text-end z-10">
+    <!-- Show 'Dashboard' if logged in -->
+            <Link v-if="loggedIn" :href="route('dashboard')" :active="route().current('dashboard')" 
                 class="text-sm text-gray-700 dark:text-gray-500 underline">
-            Dashboard
+                Dashboard
             </Link>
+            <!-- Show 'Login' and 'Register' if not logged in -->
             <template v-else>
-                <Link :href="route('login')" class="text-sm text-gray-700 dark:text-gr
-                -500 underline">Login</Link>
-                <Link v-if="canRegister" :href="route('register')"
-                    class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
+                <Link v-if="canLogin" :href="route('login')" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</Link>
+                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
             </template>
-            <div class="me-8">
-                <ThemeDropdown class="w-64" />
+
+            <div class="">
+                <ThemeDropdown />
             </div>
+
         </div>
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
@@ -114,7 +115,7 @@ onMounted(async () => {
                                 'row-start-1 col-start-1': index % 2 === 0,
                                 'row-start-2 col-start-2': index % 2 === 1
                             }">
-                                <h2 class="text-lg text-start font-semibold">{{ blog.title }}</h2>
+                                <h2 class="text-lg text-start font-semibold"><a :href="'/singlestory/' + blog.id">{{ blog.title }}</a></h2>
                                 <p class="text-gray-600 text-start">{{ blog.leadtext }}</p>
                                 <p class="text-gray-600 text-start h-[200px]"></p>
                             </div>
